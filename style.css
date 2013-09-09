@@ -1,0 +1,87 @@
+body{
+font-family: sans-serif;
+}
+
+#wrapper { 
+width:500px;
+margin:20px auto;
+}
+
+h1{
+text-align:center;
+}
+
+.start {
+background: #2ECC71;
+    color: #FFFFFF;
+    cursor: pointer;
+    letter-spacing: 1px;
+    padding: 10px 0;
+border-radius: 50px;
+border: 3px solid #fff;
+color: #fff;
+width:100%;
+font-weight: 700;
+}
+
+.start:active {
+border-color: #17954c;
+color: #17954c;
+}
+
+.start:hover {
+background: #24b662;
+}
+
+.next {
+background: #FCAD26;
+    color: #FFFFFF;
+    cursor: pointer;
+    letter-spacing: 1px;
+    padding: 10px 0;
+border-radius: 50px;
+border: 3px solid #fff;
+color: #fff;
+margin-top:20px;
+display:block;
+width:100%;
+font-weight: 700;
+}
+
+.next:active {
+border-color: #F58500;
+color: #222;
+}
+
+.next:hover {
+background: #F29E0D;
+}
+
+.reset {
+border: none;
+background: none;
+cursor: pointer;
+padding: 10px 40px;
+display: inline-block;
+margin: 15px 30px;
+text-transform: uppercase;
+letter-spacing: 1px;
+outline: none;
+-webkit-transition: all 0.3s;
+-moz-transition: all 0.3s;
+transition: all 0.3s;
+border-radius: 40px;
+background: none repeat scroll 0 0 #CB4E4E;
+box-shadow: 0 6px #AB3C3C;
+color: #FFFFFF;
+}
+
+.reset:hover {
+box-shadow: 0 4px #ab3c3c;
+top: 2px;
+}
+
+.reset:active {
+box-shadow: 0 0 #ab3c3c;
+top: 6px;
+}
