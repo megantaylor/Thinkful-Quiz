@@ -111,17 +111,14 @@ $(document).ready(function () {
             } else if (counter == 1) {
                 checkAnswer(userInput, qNum, questions);
                 $("#questions").find("form").remove();
-                $("#questions").append('<p class="result"></p>');
+                $("#questions").append('<h3 class="result"></h3>');
                 $(".result").text('You answered ' + sumScore(questions) + ' questions correctly out of 10.');
                    for (j = 0; j < scoreAry.length; j++) {
                         if (scoreAry[j] === 0) {
                             console.log(questions[j].q, questions[j].a);
-                            var resultClass = "result-" + j;
-                            $("#questions").append('<p class="' + resultClass + '"></p>');
-                            $("p[class|='result']").text('You missed: ' + questions[j].q + " " + questions[j].a);
+                            $("#questions").append('<p class="missed-' + j + '">You missed: ' + questions[j].q + ' ' + questions[j].a + '</p>');      
                         }
                     }
-
             } else {
                 return false;
             }
