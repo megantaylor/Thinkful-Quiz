@@ -72,7 +72,7 @@ $(document).ready(function () {
             }
         }
         //This grabs the answer choices from the questions array and returns them to createQuestion():
-        function radioButtons(ary, qNum) { 
+        function radioButtons(ary, qNum) {
             var answers = [];
             for (i = 0; i < ary.length; i++) {
                 answers.push('<label><input type="radio" name="' + qNum + '" value="' + ary[i] + '">' + ary[i] + '</label>');
@@ -82,7 +82,7 @@ $(document).ready(function () {
         
         //This sums the correct values in the questions array:
         function sumScore(questions) {
-            return scoreAry.reduce(function (previousValue, currentValue, index, array) { 
+            return scoreAry.reduce(function (previousValue, currentValue, index, array) {
                 return previousValue + currentValue;
             });
         }
@@ -91,9 +91,9 @@ $(document).ready(function () {
         function checkAnswer(answer, qNum, questions) {
             if (answer == questions[qNum].a) {
                 questions[qNum].correct = 1;
-                scoreAry.push(questions[qNum].correct); 
+                scoreAry.push(questions[qNum].correct);
             } else {
-                scoreAry.push(questions[qNum].correct); 
+                scoreAry.push(questions[qNum].correct);
             }
         }
         
@@ -111,8 +111,14 @@ $(document).ready(function () {
             } else if (counter == 1) {
                 checkAnswer(userInput, qNum, questions);
                 $("#questions").find("form").remove();
-                $("#questions").append('<p class="result"></p>');
+                $("#questions").append('<h3 class="result"></h3>');
                 $(".result").text('You answered ' + sumScore(questions) + ' questions correctly out of 10.');
+                   for (j = 0; j < scoreAry.length; j++) {
+                        if (scoreAry[j] === 0) {
+                            console.log(questions[j].q, questions[j].a);
+                            $("#questions").append('<p class="missed-' + j + '">You missed: ' + questions[j].q + ' ' + questions[j].a + '</p>');      
+                        }
+                    }
             } else {
                 return false;
             }
